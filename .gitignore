@@ -1,0 +1,13 @@
+# Offline OCR Suite
+
+logs/
+cache/
+models/
+venv/
+*.pyc
+__pycache__/
+*.pkl
+*.log
+.DS_Store
+temp_paddle_*.png
+batch_results.json

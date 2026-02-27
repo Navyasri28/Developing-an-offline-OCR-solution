@@ -1,0 +1,40 @@
+ocr_engines:
+  tesseract:
+    enabled: true
+    path: null  # Auto-detect, or set path like "C:\Program Files\Tesseract-OCR\tesseract.exe"
+    languages: ["eng", "fra", "deu", "spa", "chi_sim"]
+    psm_modes:  # Page segmentation modes
+      auto: 3
+      single_block: 6
+      single_line: 7
+      single_word: 8
+      sparse: 11
+    
+  easyocr:
+    enabled: true
+    languages: ["en", "fr", "de", "es", "ch_sim", "ch_tra"]
+    gpu: false
+    model_storage: "./models/easyocr"
+    
+  paddleocr:
+    enabled: true
+    languages: ["en", "ch", "fr", "german", "korean", "japan"]
+    gpu: false
+    model_storage: "./models/paddleocr"
+    angle_classification: true
+
+preprocessing:
+  enabled: true
+  deskew: true
+  denoise: true
+  contrast_enhance: true
+  target_dpi: 300
+
+performance:
+  cache_results: true
+  cache_dir: "./cache"
+  timeout_seconds: 30
+
+logging:
+  level: INFO
+  file: "./logs/ocr_suite.log"
